@@ -1,0 +1,22 @@
+from nltk import word_tokenize
+from nltk.collocations import BigramCollocationFinder
+
+def bigram(str):
+    bigrams = []
+    sentence = str.split(" ")
+    for i in range(len(sentence)-1):
+        iBigram = [sentence[i], sentence[i+1]]
+        bigrams.append(iBigram)
+    return bigrams
+
+def calculateProb():
+    print()
+
+def calculateCorpus():
+    file = open("corpus_for_language_models.txt", "r")
+    print(bigram(file.read()))
+    file.close()
+
+print(bigram("Sales of the company to return to normalcy"))
+print(bigram("The new products and services contributed to increase revenue"))
+calculateCorpus()
